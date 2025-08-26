@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Jar</title>
+    <meta name="theme-color" content="#8B5CF6">
+    <link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;Decision Jar&quot;,&quot;short_name&quot;:&quot;DecisionJar&quot;,&quot;start_url&quot;:&quot;/&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;%23ffffff&quot;,&quot;theme_color&quot;:&quot;%238B5CF6&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%238B5CF6'/%3E%3Ctext x='50' y='60' text-anchor='middle' fill='white' font-size='30'%3E🎲%3C/text%3E%3C/svg%3E&quot;,&quot;sizes&quot;:&quot;192x192&quot;,&quot;type&quot;:&quot;image/svg+xml&quot;}]}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">🎯 Decision Jar</div>
+            <div class="subtitle">Can't decide? Let the jar choose!</div>
+        </div>
+
+        <div id="installPrompt" class="install-prompt" style="display: none;">
+            <div>📱 Install this app on your phone!</div>
+            <button onclick="installApp()">Add to Home Screen</button>
+        </div>
+
+        <div class="input-section">
+            <div class="input-row">
+                <input type="text" id="optionInput" class="text-input" placeholder="Add an option..." maxlength="100">
+                <button class="add-btn" onclick="addOption()">+</button>
+            </div>
+        </div>
+
+        <div class="options-list">
+            <div id="optionsList"></div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                <span id="optionCount" style="color: #666; font-size: 14px;">0 options</span>
+                <button id="clearAllBtn" class="clear-btn" onclick="clearAll()" style="display: none;">Clear All</button>
+            </div>
+        </div>
+
+        <div class="jar-section">
+            <div id="jar" class="jar">
+                <div class="jar-highlight"></div>
+                <span id="jarText">Empty</span>
+            </div>
+
+            <div id="resultCard" class="result-card" style="display: none;">
+                <div class="result-title">🎉 Decision Made!</div>
+                <div id="resultText" class="result-text"></div>
+                <button class="share-btn" onclick="shareResult()">📤 Share</button>
+            </div>
+
+            <button id="pickBtn" class="pick-btn" onclick="pickOption()" disabled>
+                🎲 Pick for Me!
+            </button>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+            Add some options above to get started! 🚀
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
