@@ -1,2 +1,2 @@
-# decision-jar.github.io
+# decision-jar
 A simple web app
